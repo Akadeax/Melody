@@ -78,7 +78,6 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
-
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
@@ -95,7 +94,7 @@
         <dependency>
             <groupId>com.github.Akadeax</groupId>
             <artifactId>MelodyAPI</artifactId>
-            <version>651b89634b</version>
+            <version>29872aadaf</version>
         </dependency>
     </dependencies>
 </project>

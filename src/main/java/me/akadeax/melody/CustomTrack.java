@@ -4,14 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomTrack implements MelodyTrack {
-    public List<MelodySound> sounds;
+    public List<MelodyNote> notes;
 
-    public List<MelodySound> getSounds() {
-        return new ArrayList<>(sounds);
+    public List<MelodyNote> getSounds() {
+        return new ArrayList<>(notes);
     }
 
-    public CustomTrack(List<MelodySound> sounds) {
-        this.sounds = sounds;
+    public CustomTrack(List<MelodyNote> notes) {
+        this.notes = notes;
     }
-
 }
