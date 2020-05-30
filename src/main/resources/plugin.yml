@@ -1,4 +1,4 @@
 name: Melody
 version: ${project.version}
-main: me.akadeax.melody.Melody
-api-version: 1.13
+main: me.akadeax.melody.MelodyPlugin
+api-version: "1.13"
