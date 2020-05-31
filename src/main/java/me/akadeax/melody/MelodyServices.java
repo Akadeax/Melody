@@ -2,6 +2,7 @@ package me.akadeax.melody;
 
 import org.bukkit.Instrument;
 import org.bukkit.entity.Player;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
 
@@ -10,7 +11,7 @@ public class MelodyServices implements Melody {
     @Override
     public void playTrack(MelodyTrack track, Player player) {
         Thread playThread = new Thread(() -> {
-            for(MelodyNote curr : track.getSounds()) {
+            for(MelodyNote curr : track.getNotes()) {
                 if(curr.isPause()) {
                     try {
                         Thread.sleep(curr.getOctave());
@@ -26,14 +27,38 @@ public class MelodyServices implements Melody {
         playThread.start();
     }
 
-    public MelodyTrack createTrack(List<MelodyNote> notes) {
-        return new CustomTrack(notes);
+    @Override
+    public MelodyTrack createTrack(String name, List<MelodyNote> notes) {
+        return new CustomTrack(name, notes);
     }
 
+    @Override
     public MelodyNote createNote(MelodyInstrument instrument, MelodyTone tone, int octave) {
         return new CustomNote(instrument, tone, octave);
     }
+
+    @Override
     public MelodyNote createPause(int time) {
         return new CustomNote(MelodyInstrument.Pause, MelodyTone.C, time);
+    }
+
+    @Override
+    public String serializeTrack(MelodyTrack track) {
+        return CustomTrack.serialize(track);
+    }
+
+    @Override
+    public MelodyTrack deserializeTrack(String serializedTrack) {
+        return CustomTrack.deserialize(serializedTrack);
+    }
+
+    @Override
+    public void saveTrack(MelodyTrack track, String relPath) {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public MelodyTrack loadTrack(String relFilePath) {
+        throw new NotImplementedException();
     }
 }
