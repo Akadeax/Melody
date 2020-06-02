@@ -1,5 +1,5 @@
 # What is Melody?
-<p><b>Melody</b> is a spigot plugin that allows you to play Music you (or others!) have written in-game, for whatever purpose you would like!</p>
+<p><b>Melody</b> is a spigot plugin that allows you to play Music you (or others!) have composed in-game, for whatever purpose you would like!</p>
 <p>Whether you want to play music for your RPG, add some spice to your adventure map server, or simply want your players to be able to listen to music, Melody has you covered!</p>
 
 # Installation
