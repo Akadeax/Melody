@@ -94,7 +94,7 @@
         <dependency>
             <groupId>com.github.Akadeax</groupId>
             <artifactId>MelodyAPI</artifactId>
-            <version>2cd18084b6</version>
+            <version>35ada32a9f</version>
         </dependency>
     </dependencies>
 </project>

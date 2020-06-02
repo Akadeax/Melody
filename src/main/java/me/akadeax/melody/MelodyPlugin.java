@@ -7,7 +7,7 @@ public final class MelodyPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        MelodyServices mel = new MelodyServices();
-        getServer().getServicesManager().register(Melody.class, mel, this, ServicePriority.Normal);
+        MelodyServices srvc = new MelodyServices(this);
+        getServer().getServicesManager().register(Melody.class, srvc, this, ServicePriority.Normal);
     }
 }
