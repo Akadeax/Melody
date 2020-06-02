@@ -33,12 +33,11 @@ public class MelodyServices implements Melody {
             @Override
             public void run() {
                 int start = currRow * toneAmt;
-                int end = currRow * toneAmt + toneAmt;
+                // end (pause) after either start + 25 or after the last note was reached (notes.length - start)
+                int end = start + Math.min(notes.size() - start, toneAmt);
 
                 Vector playerFacing = player.getLocation().getDirection().multiply(5);
                 Location playLoc = player.getEyeLocation().add(playerFacing);
-
-                player.getWorld().spawnParticle(Particle.BARRIER, playLoc, 5);
 
                 for(int i = start; i < end; i++) {
                     MelodyNote curr = notes.get(i);
@@ -66,7 +65,7 @@ public class MelodyServices implements Melody {
     }
 
     @Override
-    public MelodyNote createPause(int pauseBeatAmount) {
+    public MelodyNote createPause() {
         return new CustomNote(MelodyInstrument.PAUSE, MelodyTone.C, -1);
     }
 
