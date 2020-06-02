@@ -1,8 +1,11 @@
 package me.akadeax.melody;
 
 import org.bukkit.Instrument;
+import org.bukkit.Location;
+import org.bukkit.Particle;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.util.Vector;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -21,21 +24,35 @@ public class MelodyServices implements Melody {
     @Override
     public void playTrack(MelodyTrack track, Player player) {
         final List<MelodyNote> notes = track.getNotes();
+        final int toneAmt = MelodyNote.bukkitToneAmount();
 
+        final long period = (long)((double)60 / track.getBPM() * 20);
         new BukkitRunnable() {
 
             int currRow = 0;
             @Override
             public void run() {
-                for(int i = 0; i < MelodyNote.bukkitToneAmount(); i++) {
+                int start = currRow * toneAmt;
+                int end = currRow * toneAmt + toneAmt;
+
+                Vector playerFacing = player.getLocation().getDirection().multiply(5);
+                Location playLoc = player.getEyeLocation().add(playerFacing);
+
+                player.getWorld().spawnParticle(Particle.BARRIER, playLoc, 5);
+
+                for(int i = start; i < end; i++) {
                     MelodyNote curr = notes.get(i);
+
                     if(curr.getInstrument() != MelodyInstrument.PAUSE) {
                         Instrument bukkitInstrument = curr.getInstrument().toBukkitInstrument();
-                        player.playNote(player.getEyeLocation(), bukkitInstrument, curr.getBukkitNote());
+                        player.playNote(playLoc, bukkitInstrument, curr.getBukkitNote());
                     }
                 }
+                currRow++;
+
+                if(currRow * toneAmt >= notes.size()) this.cancel();
             }
-        }.runTaskTimer(plugin, 0, (60 / track.getBPM()) * 20);
+        }.runTaskTimer(plugin, 0, period);
     }
 
     @Override
