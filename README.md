@@ -11,7 +11,7 @@ You want to interact with Melody in your own code? Awesome! we provide an API [h
 
 ### Okay... But how do I make songs?
 For now, we unfortunately only support a [rather hard to use CLI](https://github.com/Akadeax/MelodyConsoleClient), but our way more [user-friendly electron client](https://github.com/Akadeax/MelodyClient) will release in the near future! 
-<p>As soon as you have composed your track and exported it, you get your .mel file!
+<p>As soon as you have composed your track and exported it, you get your .melody file!
 
 ### Great! but what now?
-<p>now you can place that .mel file inside of Melody's data folder (".../plugins/Melody/") and play it in-game, with "/play 'filename'.mel". Success!</p>
+<p>now you can place that .melody file inside of Melody's data folder (".../plugins/Melody/") and play it in-game, with "/play 'filename'.melody". Success!</p>
