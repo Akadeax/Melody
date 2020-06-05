@@ -1,10 +1,10 @@
-### For developers
-You want to interact with Melody in your own code? Awesome! we provide an API [here](https://github.com/Akadeax/MelodyAPI) that you can include in your plugin to interact with Melody.
-<p>We do <b>not</b> recommend depending on the same artifact that servers have to install.</p>
-
 # Melody
 <p><b>Melody</b> is a spigot plugin that allows you to play Music you (or others!) have composed in-game, for whatever purpose you would like!</p>
 <p>Whether you want to play background music for your RPG, add some spice to your adventure map server, or simply want your players to be able to listen to music, Melody has you covered!</p>
+
+## For developers
+You want to interact with Melody in your own code? Awesome! we provide an API [here](https://github.com/Akadeax/MelodyAPI) that you can include in your plugin to interact with Melody.
+<p>We do <b>not</b> recommend depending on the same artifact that servers have to install.</p>
 
 ## Installation
 <p>Drop the provided melody.jar into your plugins folder. Done. :)</p>
