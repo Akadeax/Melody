@@ -14,4 +14,4 @@ For now, we unfortunately only support a [rather hard to use CLI](https://github
 <p>As soon as you have composed your track and exported it, you get your .melody file!
 
 ### Great! but what now?
-<p>now you can place that .melody file inside of Melody's data folder (".../plugins/Melody/") and play it in-game, with "/play 'filename'.melody". Success!</p>
+now you can place that .melody file inside of Melody's data folder (".../plugins/Melody/") and play it in-game, with "/play 'filename'.melody", or you load and play it in your own plugin through [our API](https://github.com/Akadeax/MelodyAPI). Success!
