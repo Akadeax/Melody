@@ -2,3 +2,16 @@ name: Melody
 version: ${project.version}
 main: me.akadeax.melody.MelodyPlugin
 api-version: "1.13"
+
+commands:
+  play:
+    description: Plays a track from Melody's data folder.
+    permission: melody.play
+    usage: /<command> <relative file path in melody data folder>
+    aliases:
+      - playtrack
+      - playsong
+
+permissions:
+  melody.play:
+    default: op
