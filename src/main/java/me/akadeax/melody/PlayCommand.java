@@ -5,6 +5,9 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 public class PlayCommand implements CommandExecutor {
 
     private Melody melody;
@@ -18,9 +21,13 @@ public class PlayCommand implements CommandExecutor {
 
         Player p = (Player)sender;
         if(args.length != 1) return false;
-        MelodyTrack track = melody.loadTrack(args[0]);
-        melody.playTrack(track, p);
 
+        String finalPath = args[0];
+        if(!finalPath.endsWith(".melody")) finalPath += ".melody";
+
+        MelodyTrack track = melody.loadTrack(finalPath);
+        melody.playTrack(track, p);
+        
         return true;
     }
 

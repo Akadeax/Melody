@@ -1,6 +1,5 @@
 package me.akadeax.melody;
 
-import org.bukkit.command.Command;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -12,6 +11,7 @@ public final class MelodyPlugin extends JavaPlugin {
         MelodyServices service = new MelodyServices(this);
         getServer().getServicesManager().register(Melody.class, service, this, ServicePriority.Normal);
 
+        getDataFolder().mkdirs();
 
         PluginCommand playCmd = getCommand("play");
         if(playCmd == null) {

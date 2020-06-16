@@ -59,7 +59,6 @@ public class PlayTrackTask extends BukkitRunnable {
             }
         }
 
-        System.out.println(noteCols.size());
         for(MelodyNote curr : noteCols.get(currCol)) {
             Instrument bukkitInstrument = curr.getInstrument().toBukkitInstrument();
             playFor.playNote(playLoc, bukkitInstrument, curr.getBukkitNote());
