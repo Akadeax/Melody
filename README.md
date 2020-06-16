@@ -10,7 +10,7 @@ You want to interact with Melody in your own code? Awesome! we provide an API [h
 <p>Drop the provided melody.jar into your plugins folder. Done. :)</p>
 
 ### Okay... But how do I make songs?
-For now, we unfortunately only support a [rather hard to use CLI](https://github.com/Akadeax/MelodyConsoleClient), but our way more [user-friendly electron client](https://github.com/Akadeax/MelodyClient) will release in the near future! 
+For now, we only support a [rather hard to use CLI](https://github.com/Akadeax/MelodyConsoleClient), but our way more [user-friendly electron client](https://github.com/Akadeax/MelodyClient) will release in the future. 
 <p>As soon as you have composed your track and exported it, you get your .melody file!
 
 ### Great! but what now?
